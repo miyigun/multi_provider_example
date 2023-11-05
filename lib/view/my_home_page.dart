@@ -14,7 +14,7 @@ class MyHomePage extends StatelessWidget {
     /// MyHomePage is rebuilt when counter changes
 
     final counter = Provider.of<CountingTheNumber>(context);
-    final secondMod=Provider.of<SecondModelProvider>(context);
+    final secondMod = Provider.of<SecondModelProvider>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -76,8 +76,7 @@ class MyHomePage extends StatelessWidget {
                   padding: const EdgeInsets.all(10.0),
                   color: Colors.red,
                   child: Consumer<FirstModelProvider>(
-                    builder: (context, firstModel, child) =>
-                        ElevatedButton(
+                    builder: (context, firstModel, child) => ElevatedButton(
                       onPressed: () {
                         firstModel.supplyFirstData();
                       },
@@ -105,8 +104,7 @@ class MyHomePage extends StatelessWidget {
                   padding: const EdgeInsets.all(10.0),
                   color: Colors.red[200],
                   child: Consumer<FirstModelProvider>(
-                    builder: (context, firstModel, child) =>
-                        ElevatedButton(
+                    builder: (context, firstModel, child) => ElevatedButton(
                       onPressed: () {
                         firstModel.clearData();
                         counter.resetValue();
@@ -126,8 +124,7 @@ class MyHomePage extends StatelessWidget {
                   padding: const EdgeInsets.all(10.0),
                   color: Colors.white30,
                   child: Consumer<SecondModelProvider>(
-                    builder: (context, secondModel, child) =>
-                    Text(
+                    builder: (context, secondModel, child) => Text(
                       secondModel.name,
                       style: const TextStyle(fontSize: 40.0),
                     ),
@@ -140,16 +137,15 @@ class MyHomePage extends StatelessWidget {
                   padding: const EdgeInsets.all(10.0),
                   color: Colors.red[200],
                   child: Consumer<SecondModelProvider>(
-                    builder: (context, secondModel, child) =>
-                        ElevatedButton(
-                          onPressed: () {
-                            secondModel.getFirstName();
-                          },
-                          child: const Text(
-                            'Get First Name',
-                            style: TextStyle(fontSize: 20.0),
-                          ),
-                        ),
+                    builder: (context, secondModel, child) => ElevatedButton(
+                      onPressed: () {
+                        secondModel.getFirstName();
+                      },
+                      child: const Text(
+                        'Get First Name',
+                        style: TextStyle(fontSize: 20.0),
+                      ),
+                    ),
                   ),
                 ),
               ],

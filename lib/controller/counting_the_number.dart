@@ -10,7 +10,7 @@ class CountingTheNumber with ChangeNotifier {
   }
 
   void decreaseValue() {
-    if (value>0){
+    if (value > 0) {
       value--;
     }
 
