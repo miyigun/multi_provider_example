@@ -1,0 +1,36 @@
+import 'package:flutter/material.dart';
+import 'package:multi_provider_example/controller/counting_the_number.dart';
+import 'package:multi_provider_example/model/provider/first_model_provider.dart';
+import 'package:multi_provider_example/view/my_home_page.dart';
+import 'package:provider/provider.dart';
+
+void main() {
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => CountingTheNumber(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => FirstModelProvider(),
+        ),
+      ],
+      child: const MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  final String title = 'Using Multi Provider Example';
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Using Multi Provider Example',
+      debugShowCheckedModeBanner: false,
+      home: MyHomePage(title: title),
+    );
+  }
+}
