@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:multi_provider_example/controller/counting_the_number.dart';
-import 'package:multi_provider_example/model/provider/first_model_provider.dart';
+import 'package:multi_provider_example/models/providers/first_model_provider.dart';
+import 'package:multi_provider_example/models/providers/second_model_provider.dart';
 import 'package:multi_provider_example/view/my_home_page.dart';
 import 'package:provider/provider.dart';
 
@@ -13,6 +14,9 @@ void main() {
         ),
         ChangeNotifierProvider(
           create: (context) => FirstModelProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => SecondModelProvider(),
         ),
       ],
       child: const MyApp(),
